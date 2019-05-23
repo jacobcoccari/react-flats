@@ -12,6 +12,10 @@ class App extends Component {
     }
   }
 
+  search = (lat, lng) => {
+    //Insert google API call here !!
+  }
+
   render() {
     return (
 
