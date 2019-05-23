@@ -8,3 +8,15 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.flats {
+  flex: 0 0 60%;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+}
+
+.flat {
+  color: red;
+}
+
