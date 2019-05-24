@@ -8,18 +8,26 @@ class App extends Component {
     super(props);
 
     this.state = {
-      flats: props.flats
-
+      flats: props.flats,
+      lat: 48.884211,
+      lng: 2.34689
     }
   }
 
   search = (lat, lng) => {
+    this.setState({
+      lat: lat,
+      lng: lng
+    });
+
+    console.log(lat);
+
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '1000px', width: '1000px', position: 'absolute' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "" }}
-          defaultCenter={{lat: 59.95, lng: 30.33}}
+          bootstrapURLKeys={{ key: "AIzaSyBKeK3fIeRIMXgDl9b4ocyeIcBqW1oqSbs" }}
+          defaultCenter={{lat: lat, lng: lng}}
           defaultZoom={12}
         >
         </GoogleMapReact>
@@ -32,10 +40,10 @@ class App extends Component {
 
         <div>
           <div className="flat-list">
-            <FlatList flats={this.flats} />
+            <FlatList flats={this.flats} searchFunction={this.search}/>
           </div>
           <div className="map-container">
-            {this.search(10, 10)}
+            {this.search(this.state.lat,this.state.lng)}
           </div>
         </div>
     );

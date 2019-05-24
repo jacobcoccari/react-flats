@@ -14,9 +14,13 @@ class FlatList extends Component {
     lng={flat.lng} />));
   }
 
+  handleClick = (event) => {
+    this.props.searchFunction(event.target.lat, event.target.lng);
+  }
+
   render() {
     return (
-        <div className="flat">
+        <div className="flat" onClick={this.handleClick} >
           {this.renderList()}
         </div>
       );
