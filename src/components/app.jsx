@@ -36,6 +36,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("penis");
     return (
 
         <div>

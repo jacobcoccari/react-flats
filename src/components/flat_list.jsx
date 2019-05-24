@@ -14,17 +14,17 @@ class FlatList extends Component {
     lng={flat.lng} />));
   }
 
-  handleClick = (event) => {
+  handleClick(event) {
+    console.log("fucker");
     this.props.searchFunction(event.target.lat, event.target.lng);
   }
 
   render() {
     return (
-        <div className="flat" onClick={this.handleClick} >
+        <div className="flat" onClick={this.handleClick.bind(this)} >
           {this.renderList()}
         </div>
       );
   }
 }
-
 export default FlatList;
