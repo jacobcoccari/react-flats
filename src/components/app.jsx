@@ -29,9 +29,9 @@ class App extends Component {
       // Important! Always set the container height explicitly
       <div style={{ height: '100%', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "uhasfjkca" }}
-          defaultCenter={{lat: this.state.lat, lng: this.state.lng}}
-          defaultZoom={12}
+          bootstrapURLKeys={{ key: "key" }}
+          center={{lat: this.state.lat, lng: this.state.lng}}
+          defaultZoom={13}
         >
         <Marker lat={this.state.lat} lng={this.state.lng} />
         </GoogleMapReact>
