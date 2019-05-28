@@ -6,22 +6,19 @@ import Flat from './flat.jsx'
 
 class FlatList extends Component {
   renderList  = () => {
-    return (flats.map(flat => <Flat name={flat.name}
+    return (flats.map((flat, index) => <Flat name={flat.name}
     url={flat.imageUrl}
     price={flat.price}
     curr={flat.curr}
     lat={flat.lat}
-    lng={flat.lng} />));
-  }
-
-  handleClick(event) {
-    console.log("fucker");
-    this.props.searchFunction(event.target.lat, event.target.lng);
+    lng={flat.lng}
+    index={index}
+    selectFlat={this.props.changeFunction}/>));
   }
 
   render() {
     return (
-        <div className="flat" onClick={this.handleClick.bind(this)} >
+        <div className="flat">
           {this.renderList()}
         </div>
       );

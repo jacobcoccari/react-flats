@@ -14,20 +14,21 @@ class App extends Component {
     }
   }
 
-  search = (lat, lng) => {
+  change = (lat, lng) => {
     this.setState({
       lat: lat,
       lng: lng
     });
+  }
 
-    console.log(lat);
-
+  search = () => {
+    console.log(this.state.lat);
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '1000px', width: '1000px', position: 'absolute' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyBKeK3fIeRIMXgDl9b4ocyeIcBqW1oqSbs" }}
-          defaultCenter={{lat: lat, lng: lng}}
+          defaultCenter={{lat: this.state.lat, lng: this.state.lng}}
           defaultZoom={12}
         >
         </GoogleMapReact>
@@ -36,15 +37,15 @@ class App extends Component {
   }
 
   render() {
-    console.log("penis");
+    console.log("app has rendered");
     return (
 
         <div>
           <div className="flat-list">
-            <FlatList flats={this.flats} searchFunction={this.search}/>
+            <FlatList searchFunction={this.search} changeFunction={this.change}/>
           </div>
           <div className="map-container">
-            {this.search(this.state.lat,this.state.lng)}
+            {this.search()}
           </div>
         </div>
     );
