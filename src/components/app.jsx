@@ -29,7 +29,7 @@ class App extends Component {
       // Important! Always set the container height explicitly
       <div style={{ height: '100%', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "" }}
+          bootstrapURLKeys={{ key: "GOOGLE_API_KEY" }}
           center={{lat: this.state.lat, lng: this.state.lng}}
           defaultZoom={13}
         >
