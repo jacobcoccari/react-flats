@@ -27,9 +27,9 @@ class App extends Component {
     console.log(this.state.lat);
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '1000px', width: '1000px', position: 'absolute' }}>
+      <div style={{ height: '100%', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyBKeK3fIeRIMXgDl9b4ocyeIcBqW1oqSbs" }}
+          bootstrapURLKeys={{ key: "uhasfjkca" }}
           defaultCenter={{lat: this.state.lat, lng: this.state.lng}}
           defaultZoom={12}
         >
@@ -44,9 +44,7 @@ class App extends Component {
     return (
 
         <div>
-          <div className="flat-list">
-            <FlatList searchFunction={this.search} changeFunction={this.change}/>
-          </div>
+          <FlatList searchFunction={this.search} changeFunction={this.change}/>
           <div className="map-container">
             {this.search()}
           </div>

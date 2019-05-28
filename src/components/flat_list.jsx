@@ -18,7 +18,7 @@ class FlatList extends Component {
 
   render() {
     return (
-        <div className="flat">
+        <div className="flat-list">
           {this.renderList()}
         </div>
       );
