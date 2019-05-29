@@ -36,4 +36,9 @@
     "lint": "eslint './src/**/*.js*'",
     "deploy": "webpack -p && gh-pages -d dist"
   }
+
+  "engines": {
+    "yarn": "1.15.2"
+
+  }
 }
